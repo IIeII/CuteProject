@@ -49,13 +49,29 @@ package popups.view.mediators {
 
         private function onCloseButtonPressed(event:EventWithData):void {
 
-            closePopUp();
-        }
+            var isCameFromCloseButton:Boolean = true;
 
+            makeAction(_closeActionVO, isCameFromCloseButton);
+        }
 
         private function onDoButtonPressed(event:EventWithData):void {
 
+            var isCameFromCloseButton:Boolean = false;
 
+            makeAction(_closeActionVO, isCameFromCloseButton);
+        }
+
+        private function makeAction(popUpActionVO:PopUpActionVO, isCameFromCloseButton:Boolean):void {
+
+            if (popUpActionVO){
+
+                sendNotification(popUpActionVO.notificationName, popUpActionVO.notificationBody, popUpActionVO.notificationType);
+            }
+
+            if ((popUpActionVO && popUpActionVO..shouldClose) || isCameFromCloseButton){
+
+                closePopUp();
+            }
         }
 
         private function closePopUp():void {
