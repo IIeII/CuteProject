@@ -46,7 +46,6 @@ package popups.view.mediators {
             _viewLogic.removeEventListener(PopUpBaseEvents.CLOSE_BUTTON_PRESSED, onCloseButtonPressed);
         }
 
-
         private function onCloseButtonPressed(event:EventWithData):void {
 
             var isCameFromCloseButton:Boolean = true;
