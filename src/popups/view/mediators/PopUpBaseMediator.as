@@ -76,6 +76,7 @@ package popups.view.mediators {
         private function closePopUp():void {
 
             sendNotification(PopUpBaseNotifications.POP_UP_CLOSED, mediatorName);
+            _viewLogic.destroy();
             facade.removeMediator(mediatorName);
         }
     }
