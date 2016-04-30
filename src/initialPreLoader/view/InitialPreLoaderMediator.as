@@ -1,4 +1,6 @@
 package initialPreLoader.view {
+	import app.config.GeneralAppNotifications;
+
 	import core.view.mediators.UIBaseMediator;
 
 	import org.puremvc.as3.interfaces.INotification;
@@ -27,14 +29,17 @@ package initialPreLoader.view {
 
 		override public function listNotificationInterests():Array {
 			return super.listNotificationInterests().concat([
-
+				GeneralAppNotifications.LOADING_PROGRESS
 			]);
 		}
 
-
 		override public function handleNotification(notification:INotification):void {
 			super.handleNotification(notification);
-
+			switch (notification.getName()){
+				case GeneralAppNotifications.LOADING_PROGRESS:
+					viewLogic.updateFieldForPercents((notification.getBody() as Number)*100);
+					break;
+			}
 
 		}
 	}

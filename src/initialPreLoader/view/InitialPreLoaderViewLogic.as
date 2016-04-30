@@ -2,7 +2,6 @@ package initialPreLoader.view {
     import core.view.components.ViewLogic;
 
     import flash.display.Graphics;
-
     import flash.display.Shape;
     import flash.display.Sprite;
     import flash.events.Event;
@@ -101,7 +100,6 @@ package initialPreLoader.view {
         public function destroy():void {
 
             content.removeEventListener(Event.ENTER_FRAME, onEnterFrame);
-            content.parent.removeChild(content);
         }
     }
 }

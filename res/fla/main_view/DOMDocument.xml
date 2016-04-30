@@ -1,0 +1,23 @@
+<DOMDocument xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://ns.adobe.com/xfl/2008/" width="960" height="540" frameRate="40" currentTimeline="1" xflVersion="2.2" creatorInfo="Adobe Flash Professional CS6" platform="Windows" versionInfo="Saved by Adobe Flash Windows 12.0 build 481" majorVersion="12" buildNumber="481" viewAngle3D="84.5182101128788" nextSceneIdentifier="2" playOptionsPlayLoop="false" playOptionsPlayPages="false" playOptionsPlayFrameActions="false">
+     <symbols>
+          <Include href="level_button_1.xml" itemIcon="0" loadImmediate="false" itemID="56a3bee9-000001d8" lastModified="1453572154"/>
+          <Include href="level_button_2.xml" itemIcon="0" loadImmediate="false" itemID="56a3c0c9-000001f3" lastModified="1453572324"/>
+          <Include href="level_button_3.xml" itemIcon="0" loadImmediate="false" itemID="56a3c108-000001f7" lastModified="1453572386"/>
+          <Include href="lobby.xml" itemID="56a3c205-000001f9" lastModified="1453572668"/>
+     </symbols>
+     <timelines>
+          <DOMTimeline name="Монтажный кадр 1">
+               <layers>
+                    <DOMLayer name="Слой 2" color="#9933CC" current="true" isSelected="true">
+                         <frames>
+                              <DOMFrame index="0" keyMode="9728">
+                                   <elements/>
+                              </DOMFrame>
+                         </frames>
+                    </DOMLayer>
+               </layers>
+          </DOMTimeline>
+     </timelines>
+     <PrinterSettings/>
+     <publishHistory/>
+</DOMDocument>
