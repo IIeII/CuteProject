@@ -32,12 +32,7 @@ package core.controller.commands {
 
             initPreLoader();
 
-            //initiate main load command
-
             initMainLoading(isHTTP);
-
-            //initiate lazy load command
-
         }
 
         private function initMainLoading(isHTTP:Boolean):void {
@@ -46,23 +41,24 @@ package core.controller.commands {
 
             assetsLoader = new BulkLoader();
 
-            assetsLoader.add("http://iieii.pp.ua/games/test_on_sex/res_"+ simple_cache +"/xml/config.xml", {id:"config", preventCache:true});
+            //XMLs:
+	        //assetsLoader.add("http://iieii.pp.ua/games/test_on_lanister/res_"+ simple_cache +"/xml/config.xml", {id:"config", preventCache:true});
 
             var myContext: LoaderContext = new LoaderContext(true, null, SecurityDomain.currentDomain);
             var myContext2: LoaderContext = new LoaderContext(true, null, SecurityDomain.currentDomain);
+            var myContext3: LoaderContext = new LoaderContext(true, null, SecurityDomain.currentDomain);
 
             if (isHTTP){
 
                 Security.allowDomain("*");
                 Security.allowInsecureDomain("*");
-
-                assetsLoader.add("http://iieii.pp.ua/games/test_on_sex/res_"+ simple_cache +"/swf/view.swf", {id:"mainView", context:myContext, preventCache:true} );
-                assetsLoader.add("http://api.vk.com/swf/vk_ads.swf", {id:"lib", context:myContext2, preventCache:true} );
-            } else {
-
-                assetsLoader.add("http://iieii.pp.ua/games/test_on_sex/res_"+ simple_cache +"/swf/view.swf", {id:"mainView", context:myContext, preventCache:true} );
-                assetsLoader.add("http://api.vk.com/swf/vk_ads.swf", {id:"lib", preventCache:true, context:myContext2} );
             }
+
+            //SWF:
+            assetsLoader.add("http://iieii.pp.ua/games/test_on_lanister/res_"+ simple_cache +"/swf/mainView.swf", {id:"mainView", context:myContext, preventCache:true} );
+            assetsLoader.add("http://api.vk.com/swf/vk_ads.swf", {id:"lib", preventCache:true, context:myContext2} );
+            assetsLoader.add("http://ad.mail.ru/static/vkcontainer.swf", {id:"lib", preventCache:true, context:myContext3} );
+
             assetsLoader.addEventListener(BulkLoader.COMPLETE, onLoadComplete);
             assetsLoader.addEventListener(BulkLoader.PROGRESS, onProgress);
             assetsLoader.start();

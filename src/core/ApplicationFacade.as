@@ -5,14 +5,14 @@ package core {
 
     import org.puremvc.as3.patterns.facade.Facade;
 
-    public class GameFacade extends Facade {
+    public class ApplicationFacade extends Facade {
 
-        public static function getInstance():GameFacade {
+        public static function getInstance():ApplicationFacade {
 
             if(instance == null) {
-                instance = new GameFacade();
+                instance = new ApplicationFacade();
             }
-            return instance as GameFacade;
+            return instance as ApplicationFacade;
         }
 
         public function startup(command:Class, root:Sprite):void {
